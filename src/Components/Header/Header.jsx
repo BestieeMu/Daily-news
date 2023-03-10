@@ -3,7 +3,7 @@ import { AiOutlineSearch, AiOutlineMenu } from "react-icons/ai";
 import "./Header.css";
 
 const Hearder = () => {
-const [showMobileNav, setShowMobileNav] = useState(true)
+const [showMobileNav, setShowMobileNav] = useState(false)
 
 const handlNavSwitch = () => {
   setShowMobileNav(!showMobileNav);
