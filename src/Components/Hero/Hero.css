@@ -1,0 +1,49 @@
+.hero {
+  height: 500px;
+}
+.parent {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 7 / 5;
+}
+.div2 {
+  grid-area: 5 / 5 / 7 / 7;
+}
+.div3 {
+  grid-area: 5 / 7 / 7 / 9;
+}
+.div4 {
+  grid-area: 1 / 5 / 5 / 9;
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        height: auto;
+      }
+  .parent {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+  }
+
+  .div1 {
+    grid-area: 11 / 1 / 13 / 7;
+  }
+  .div2 {
+    grid-area: 9 / 1 / 11 / 7;
+  }
+  .div3 {
+    grid-area: 1 / 1 / 5 / 7;
+  }
+  .div4 {
+    grid-area: 5 / 1 / 9 / 7;
+  }
+}

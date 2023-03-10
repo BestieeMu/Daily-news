@@ -6,7 +6,7 @@ const Hearder = () => {
 const [showMobileNav, setShowMobileNav] = useState(true)
 
 const handlNavSwitch = () => {
-  setShowMobileNav(!false);
+  setShowMobileNav(!showMobileNav);
 }
   
 
@@ -50,7 +50,7 @@ const handlNavSwitch = () => {
                 </span>
                 Menu
               </button>
-              <div className={showMobileNav ? "w-11/12 bg-white nav-dropdown py-5 rounded absolute " : "hidden" }>
+              <div className={showMobileNav ? "w-11/12 bg-white nav-dropdown py-5 rounded absolute z-10 " : "hidden" }>
                 <ul className="flex flex-col gap-5  ml-10 font-medium">
                   <li className="cursor-pointer hover:text-red-500">Home</li>
                   <li className="cursor-pointer hover:text-red-500">Lifestyle</li>
