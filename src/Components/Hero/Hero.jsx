@@ -4,7 +4,7 @@ import "./Hero.css";
 const Hero = () => {
   return (
     <>
-      <div className="flex flex-col md:flex-row   gap-1 w-full md:w-full xl:w-10/12 mt-10">
+      <div className="flex flex-col md:flex-row gap-1 w-full md:w-full xl:w-10/12 mt-10">
         <div className="w-full bg-green-400 main"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1541872703-74c5e44368f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBvbGl0aWNzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60')`,
