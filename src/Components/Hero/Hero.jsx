@@ -4,8 +4,8 @@ import "./Hero.css";
 const Hero = () => {
   return (
     <>
-      <div className="flex flex-col md:flex-row hero gap-1 w-full md:w-10/12 mt-10">
-        <div class="parent rounded overflow-hidden w-full">
+      <div className="flex flex-col md:flex-row bg-green-400 hero gap-1 w-full md:w-10/12 mt-10">
+        {/* <div class="parent rounded overflow-hidden w-full">
 
           <div class="div1  " style={{
               backgroundImage: `url(${'https://images.pexels.com/photos/1464210/pexels-photo-1464210.jpeg?auto=compress&cs=tinysrgb&w=600'})`,
@@ -73,7 +73,10 @@ const Hero = () => {
             </div>
         
         </div>
-        </div>
+        </div> */}
+
+
+
       </div>
     </>
   );
