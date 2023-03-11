@@ -4,78 +4,91 @@ import "./Hero.css";
 const Hero = () => {
   return (
     <>
-      <div className="flex flex-col md:flex-row bg-green-400  gap-1 w-full md:w-10/12 mt-10">
-        <div class="parent rounded overflow-hidden h-96 w-full">
-
-          <div class="div1  " style={{
-              backgroundImage: `url(${'https://images.pexels.com/photos/1464210/pexels-photo-1464210.jpeg?auto=compress&cs=tinysrgb&w=600'})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-          }}>
-            <div className=" flex justify-center w-full h-full relative" style={{
-                background: 'rgb(0,0,0)',
-                background: 'linear-gradient(0deg, rgba(0,0,0,0.76234243697479) 10%, rgba(226,226,8,0) 98%)'
-            }}>
-            <h1 className="md:text-2xl text-xl  text-white absolute md:bottom-10 bottom-3">Lorem ipsum dolor sit amet consectetur.3</h1>
-
-            </div>
-           </div>
-
-          <div class="div2 bg-green-500 " style={{
-              backgroundImage: `url(${'https://images.pexels.com/photos/1464210/pexels-photo-1464210.jpeg?auto=compress&cs=tinysrgb&w=600'})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-          }}> 
-          
-          <div className=" flex justify-center w-full h-full relative" style={{
-                background: 'rgb(0,0,0)',
-                background: 'linear-gradient(0deg, rgba(0,0,0,0.76234243697479) 10%, rgba(226,226,8,0) 98%)'
-            }}>
-            <h1 className="text-xl md:text-2xl text-white absolute md:bottom-7  bottom-3">Lorem ipsum dolor sit amet consectetur. 1</h1>
-
-            </div>
-
-          </div>
-
-          <div class="div3 bg-yellow-500 h-48" style={{
-              backgroundImage: `url(${'https://images.pexels.com/photos/6382659/pexels-photo-6382659.jpeg?auto=compress&cs=tinysrgb&w=600'})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-          }}> 
-          
-          <div className=" flex justify-center w-full h-full relative" style={{
-                background: 'rgb(0,0,0)',
-                background: 'linear-gradient(0deg, rgba(0,0,0,0.76234243697479) 10%, rgba(226,226,8,0) 98%)'
-            }}>
-            <h1 className="text-xl md:text-2xl text-white absolute md:bottom-7 bottom-5">Lorem ipsum dolor sit amet consectetur. 2 </h1>
-
-            </div>
-
-          </div>
-
-          <div class="div4 bg-blue-500" 
-           style={{
-            backgroundImage: `url(${'https://images.pexels.com/photos/248547/pexels-photo-248547.jpeg?auto=compress&cs=tinysrgb&w=600'})`,
+      <div className="flex flex-col md:flex-row   gap-1 w-full md:w-full xl:w-10/12 mt-10">
+        <div className="w-full bg-green-400 main"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1541872703-74c5e44368f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBvbGl0aWNzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60')`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
-        }}> 
-        
-        <div className=" flex justify-center w-full h-full relative" style={{
-                background: 'rgb(0,0,0)',
-                background: 'linear-gradient(0deg, rgba(0,0,0,0.76234243697479) 10%, rgba(226,226,8,0) 98%)'
-            }}>
-            <h1 className=" md:text-2xl text-xl text-white absolute md:bottom-10 bottom-5">Lorem ipsum dolor sit amet consectetur. 4</h1>
+            backgroundPosition: 'center'
 
+          }}
+        >
+          <div className="w-full flex justify-center  h-full relative "
+            style={{
+              background: 'rgb(0,0,0)',
+              background: 'linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 45%)'
+            }}
+          >
+            <h3 className="absolute bottom-10 px-2 text-white text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio molestias, maiores accusamus quae aspernatur quisquam iure!</h3>
+          </div>
+        </div>
+
+
+        <div className="md:w-10/12 w-full flex gap-1 flex-col">
+          <div className="w-full bg-blue-400 submain1"
+            style={{
+              backgroundImage: `url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dGVjaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60')`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+      
+             }}
+          >
+              <div className="w-full flex justify-center  h-full relative "
+            style={{
+              background: 'rgb(0,0,0)',
+              background: 'linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 45%)'
+            }}
+          >
+            <h3 className="absolute bottom-7 px-2 text-white text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio molestias, maiores accusamus quae aspernatur quisquam iure!</h3>
+          </div>
+          </div>
+
+{/* two small cont on the right */}
+          <div className="w-full flex flex-col md:flex-row gap-1">
+
+            <div className="w-full bg-yellow-400 submain2"
+              style={{
+                backgroundImage: `url('https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHNwb3J0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60')`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+        
+               }}
+            >
+                <div className="w-full flex justify-center  h-full relative "
+            style={{
+              background: 'rgb(0,0,0)',
+              background: 'linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%)'
+            }}
+          >
+            <h3 className="absolute bottom-2 px-1 text-white text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio molestias, maiores accusamus quae aspernatur quisquam iure!</h3>
+          </div>
             </div>
+
+
+            <div className="w-full bg-pink-400 submain3"
+              style={{
+                backgroundImage: `url('https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGVhbHRofGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60')`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
         
-        </div>
-        </div>
+               }}
+            > 
+          <div className="w-full flex justify-center  h-full relative "
+            style={{
+              background: 'rgb(0,0,0)',
+              background: 'linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%)'
+            }}
+          >
+            <h3 className="absolute bottom-2 px-1 text-white text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio molestias, maiores accusamus quae aspernatur quisquam iure! </h3>
+          </div>
+          </div>
 
-
+          </div>
+        </div>
       </div>
     </>
   );
