@@ -8,7 +8,7 @@ const Sport = () => {
     const options = {
       method: 'GET',
       url: 'https://newscatcher.p.rapidapi.com/v1/search_enterprise',
-      params: { q: `${'nigeria politics'} `, lang: 'en', sort_by: 'relevancy', page: '1', media: 'True' },
+      params: { q: `${'sport'} `, lang: 'en', sort_by: 'relevancy', page: '1', media: 'True' },
       headers: {
         'X-RapidAPI-Key': 'af5aa19560msh7b4b5aaf5baf3f4p133455jsna0150ed2dc74',
         'X-RapidAPI-Host': 'newscatcher.p.rapidapi.com'
@@ -16,7 +16,7 @@ const Sport = () => {
     };
   
     useEffect(() => {
-      axios.request(options).then(function (response) {
+      window.onload = axios.request(options).then(function (response) {
         setData(response.data)
       }).catch(function (error) {
         console.error(error);
@@ -35,14 +35,14 @@ const Sport = () => {
 
     let news = Test.slice(0, 9)
 
-    console.log(news);
+  
   return (
     <>
       <div className='w-full flex pb-4 flex-col items-center overflow-hidden' >
 
-<div className='w-full border-b-4 px-2 py-1 border-red-500'><h3 className='text-xl font-bold'>Sport News</h3></div>
+<div className='w-full border-b-4 px-2 py-1 border-red-500'><h3 className='text-2xl font-bold'>Sport News</h3></div>
 
-<div className='mt-4 grid grid-cols-3  gap-2 '>
+<div className='mt-4 grid grid-cols-3 w-full place-content-between gap-2'>
     {
         news.map((dat) => (
                 <>
@@ -56,7 +56,7 @@ const Sport = () => {
                 backgroundPosition: 'center'
 
             }}
-        ></div>
+        > </div>
         <div className=' bg relative h-24'>
             <h5 className='font-bold text-sm h-10  overflow-hidden'>{dat.title}</h5>
 

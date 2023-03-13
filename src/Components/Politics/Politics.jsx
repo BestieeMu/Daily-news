@@ -16,7 +16,7 @@ const Politics = () => {
     };
   
     useEffect(() => {
-      axios.request(options).then(function (response) {
+      window.onload = axios.request(options).then(function (response) {
         setData(response.data)
       }).catch(function (error) {
         console.error(error);
@@ -40,9 +40,9 @@ const Politics = () => {
     <>
       <div className='w-full flex pb-4 flex-col items-center overflow-hidden' >
 
-<div className='w-full border-b-4 px-2 py-1 border-red-500'><h3 className='text-xl font-bold'>Politics</h3></div>
+<div className='w-full border-b-4 px-2 py-1 border-red-500'><h3 className='text-2xl font-bold'>Politics</h3></div>
 
-<div className='mt-4 grid grid-cols-3  gap-2 '>
+<div className='mt-4 grid grid-cols-3 w-full place-content-between gap-2 '>
     {
         news.map((dat) => (
                 <>
