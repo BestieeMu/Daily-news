@@ -10,34 +10,32 @@ const NewsLayOut = () => {
     const [data, setData] = useState([]);
 
     const options = {
-      method: 'GET',
-      url: 'https://newscatcher.p.rapidapi.com/v1/search_enterprise',
-      params: { q: `${'afro music'} `, lang: 'en', sort_by: 'relevancy', page: '1', media: 'True' },
-      headers: {
-        'X-RapidAPI-Key': 'af5aa19560msh7b4b5aaf5baf3f4p133455jsna0150ed2dc74',
-        'X-RapidAPI-Host': 'newscatcher.p.rapidapi.com'
-      }
-    };
-  
-    useEffect(() => {
-        window.onload = axios.request(options).then(function (response) {
-        setData(response.data)
+        method: 'GET',
+        url: 'https://free-news.p.rapidapi.com/v1/search',
+        params: {q: 'latest music', lang: 'en'},
+        headers: {
+          'X-RapidAPI-Key': 'af5aa19560msh7b4b5aaf5baf3f4p133455jsna0150ed2dc74',
+          'X-RapidAPI-Host': 'free-news.p.rapidapi.com'
+        }
+      };
+      
+      axios.request(options).then(function (response) {
+        setData(response.data);
       }).catch(function (error) {
         console.error(error);
       });
   
-    }, [])
-
-
-    useEffect(() => {
+      useEffect(() => {
         for (let i = 0; i < data?.articles?.length; i++) {
            
             setTest(prev => ([...prev, data.articles[i]]));
+           
         }
-
+  
     }, [])
-
-    let news = Test.slice(0, 7)
+  
+      let news = Test.slice(0, 9)
+  
 
     return (
         <>

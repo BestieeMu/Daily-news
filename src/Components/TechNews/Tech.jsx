@@ -7,35 +7,31 @@ const Tech = () => {
 
     const options = {
       method: 'GET',
-      url: 'https://newscatcher.p.rapidapi.com/v1/search_enterprise',
-      params: { q: `${'tech'} `, lang: 'en', sort_by: 'relevancy', page: '1', media: 'True' },
+      url: 'https://free-news.p.rapidapi.com/v1/search',
+      params: {q: 'tech', lang: 'en'},
       headers: {
         'X-RapidAPI-Key': 'af5aa19560msh7b4b5aaf5baf3f4p133455jsna0150ed2dc74',
-        'X-RapidAPI-Host': 'newscatcher.p.rapidapi.com'
+        'X-RapidAPI-Host': 'free-news.p.rapidapi.com'
       }
     };
-  
-    useEffect(() => {
-      window.onload = axios.request(options).then(function (response) {
-        setData(response.data)
-      }).catch(function (error) {
-        console.error(error);
-      });
-  
-    }, [])
-
+    
+    axios.request(options).then(function (response) {
+      setData(response.data);
+    }).catch(function (error) {
+      console.error(error);
+    });
 
     useEffect(() => {
-        for (let i = 0; i < data?.articles?.length; i++) {
-           
-            setTest(prev => ([...prev, data.articles[i]]));
-        }
+      for (let i = 0; i < data?.articles?.length; i++) {
+         
+          setTest(prev => ([...prev, data.articles[i]]));
+         
+      }
 
-    }, [])
+  }, [])
 
     let news = Test.slice(0, 9)
-
-  
+console.log(news);
   return (
     <>
       <div className='w-full flex pb-4 flex-col items-center overflow-hidden' >
@@ -43,37 +39,37 @@ const Tech = () => {
 <div className='w-full border-b-4 px-2 py-1 border-red-500'><h3 className='text-2xl font-bold'>Technology</h3></div>
 
 <div className='mt-4 grid grid-cols-3 w-full place-content-between gap-2 '>
-    {
-        news.map((dat) => (
-                <>
-                 {/* my news card start here */}
-    <div key={dat._id} className='w-56 rounded overflow-hidden max-h-52'>
-        <div className='w-full h-32'
-            style={{
-                backgroundImage: `url(${dat.media})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
+ 
+ {
+  news.map(news =>(
+    <>
+    {/* my news card start here */}
+<div  className='w-56 rounded overflow-hidden max-h-52'>
+<div className='w-full h-32'
+style={{
+   backgroundImage: `url(${news.media})`,
+   backgroundRepeat: 'no-repeat',
+   backgroundSize: 'cover',
+   backgroundPosition: 'center'
 
-            }}
-        ></div>
-        <div className=' bg relative h-24'>
-            <h5 className='font-bold text-sm h-10  overflow-hidden'>{dat.title}</h5>
+}}
+></div>
+<div className=' bg relative h-24'>
+<h5 className='font-bold text-sm h-10  overflow-hidden'>{news.title}</h5>
 
-            <div className='flex w-full gap-2 absolute bottom-1 pl-2 text-xs font-medium'>
-                <p className='px-1 border-r'>{dat.author}</p>
-                <p>{dat.published_date}</p>
-            </div>
-        </div>
-    </div>
-    {/* news card ends here */}
+<div className='flex w-full gap-2 absolute bottom-1 pl-2 text-xs font-medium'>
+   <p className='px-1 border-r'>{news.author}</p>
+   <p>{news.published_date}</p>
+</div>
+</div>
+</div>
+{/* news card ends here */}
 
-                </>
+   </>
+  ))
+ }
+                
 
-        )   
-        )
-    }
-   
 </div>
 {/* grid cont ends here */}
 
