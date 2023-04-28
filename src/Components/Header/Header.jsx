@@ -10,8 +10,6 @@ const handlNavSwitch = () => {
 }
   
 
- console.log(showMobileNav);
-
 
   return (
     <>
