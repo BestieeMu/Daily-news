@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import client from '../../client'
 import { Link } from 'react-router-dom';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import {Card} from '../Card';
 
 const Hero = () => {
   const [banner, setBanner] = useState([]);
 
 useEffect(() => {
  client.fetch(
-  `*[_type == "post"]{
+  `*[_type == "banner"]{
   title,
   slug,
   body,
@@ -21,26 +24,60 @@ useEffect(() => {
 
   }`
  ).then((data) => {
-  data.map(baner =>{
-    setBanner(baner)
-  })
+    setBanner(data)
  }).catch(console.error)
 
  }, [])
+
+
+ const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 1
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 1
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 1
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+}
   return (
     <>
-    <div className='relative w-9/12 mt-10 rounded-md p-3 h-96'
-    style={{
-      backgroundImage: `url(${banner.mainImage?.asset?.url})`,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover'
-    }}
-    >
-<div className='absolute bottom-20 left-10'>
-  <h2 className=' text-3xl text-white font-bold'>{banner.title}</h2>
-  <button className='bg-red-500 w-28 py-1 rounded text-white mt-5'>Read more</button>
-</div>
+    <div   className='w-9/12 '>
+      <Carousel 
+    swipeable={false}
+  draggable={false}
+  showDots={true}
+  responsive={responsive}
+  ssr={true} // means to render carousel on server-side.
+  infinite={true}
+  autoPlay={true}
+  autoPlaySpeed={5000}
+  keyBoardControl={true}
+  customTransition="all .5"
+  transitionDuration={500}
+  containerClass="carousel-container"
+  removeArrowOnDeviceType={["tablet", "mobile"]}
+  dotListClass="custom-dot-list-style"
+  itemClass="carousel-item-padding-40-px"
+
+  >
+ {  banner.map(baner =>(
+<>
+<Card item={baner}/>
+</>
+ ))}
+</Carousel>
     </div>
+   
 
     </>
   )
