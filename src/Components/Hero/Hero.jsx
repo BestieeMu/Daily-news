@@ -60,12 +60,12 @@ useEffect(() => {
   ssr={true} // means to render carousel on server-side.
   infinite={true}
   autoPlay={true}
-  autoPlaySpeed={5000}
+  autoPlaySpeed={10000}
   keyBoardControl={true}
   customTransition="all .5"
   transitionDuration={500}
   containerClass="carousel-container"
-  removeArrowOnDeviceType={["tablet", "mobile"]}
+  arrows={false}
   dotListClass="custom-dot-list-style"
   itemClass="carousel-item-padding-40-px"
 

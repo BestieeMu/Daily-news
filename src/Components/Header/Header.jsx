@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import{ useState } from "react";
 import { AiOutlineSearch, AiOutlineMenu } from "react-icons/ai";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
-const Hearder = () => {
+const Hearder = ({Entertainments, LifeStyle, Politics, Technology, scrollToSection}) => {
 const [showMobileNav, setShowMobileNav] = useState(false)
 
 const handlNavSwitch = () => {
   setShowMobileNav(!showMobileNav);
 }
-  
-
 
   return (
     <>
@@ -30,12 +29,11 @@ const handlNavSwitch = () => {
             {/* list of the links for the tablet and big screen devices */}
             <div className="w-full hidden md:block ">
               <ul className="flex gap-5  ml-10 font-medium">
-                <li className="cursor-pointer nav-links ">Home</li>
-                <li className="cursor-pointer nav-links ">Lifestyle</li>
-                <li className="cursor-pointer nav-links ">Technology</li>
-                <li className="cursor-pointer nav-links ">Politics</li>
-                <li className="cursor-pointer nav-links ">Entertainments</li>
-                <li className="cursor-pointer nav-links ">Sports</li>
+                <Link to='/'><li className="cursor-pointer nav-links ">Home</li></Link>
+                <li className="cursor-pointer nav-links " onClick={ () => scrollToSection(LifeStyle) }>Lifestyle</li>
+                <li className="cursor-pointer nav-links " onClick={ () => scrollToSection(Technology) }>Technology</li>
+                <li className="cursor-pointer nav-links " onClick={ () => scrollToSection(Politics) }>Politics</li>
+                <li className="cursor-pointer nav-links " onClick={ () => scrollToSection(Entertainments) }>Entertainments</li>
               </ul>
             </div>
 
@@ -50,12 +48,11 @@ const handlNavSwitch = () => {
               </button>
               <div className={showMobileNav ? "w-11/12 bg-white nav-dropdown py-5 rounded absolute z-10 " : "hidden" }>
                 <ul className="flex flex-col gap-5  ml-10 font-medium">
-                  <li className="cursor-pointer hover:text-red-500">Home</li>
-                  <li className="cursor-pointer hover:text-red-500">Lifestyle</li>
-                  <li className="cursor-pointer hover:text-red-500">Technology</li>
-                  <li className="cursor-pointer hover:text-red-500">Politics</li>
-                  <li className="cursor-pointer hover:text-red-500">Entertainments</li>
-                  <li className="cursor-pointer hover:text-red-500">Sports</li>
+                <Link to='/'> <li className="cursor-pointer hover:text-red-500">Home</li></Link>
+                  <li className="cursor-pointer hover:text-red-500" onClick={ () => scrollToSection(LifeStyle) }>Lifestyle</li>
+                  <li className="cursor-pointer hover:text-red-500"  onClick={ () => scrollToSection(Technology) }>Technology</li>
+                  <li className="cursor-pointer hover:text-red-500"  onClick={ () => scrollToSection(Politics) }>Politics</li>
+                  <li className="cursor-pointer hover:text-red-500" onClick={ () => scrollToSection(Entertainments) }>Entertainments</li>
                 </ul>
               </div>
             </div>
